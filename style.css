@@ -1,0 +1,43 @@
+* { padding:0px; margin:0px; }
+
+#header {
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:10px;
+}
+
+#form {
+    line-height:30px;
+	line-height: 100%;
+    background-color:white;
+    height:500px;
+    width:500px;
+    float:left;
+    padding:20px; 
+}
+
+#footer {
+	position: relative;
+    background-color:black;
+    color:white;
+    clear: both;
+	height:25px;
+    text-align:center;
+    padding:10px;
+	bottom: 0px;
+	width: 100%;
+}
+
+.input {
+	background-color: black;
+}
+
+.main-form tr {
+	height:30px;
+}
+
+.main-form td:nth-child(1) {
+	width:100px;
+}
+
