@@ -7,5 +7,4 @@ UPDATE: Still delayed due to stylistic questions. Hope to talk to Nick and Clair
 
 -- WORKING ON CATERTRAX IMPLEMENTATION
 
-API URL to test calendar.
-https://www.googleapis.com/calendar/v3/calendars/denison.edu_5ssoueqdeb05s9boa80nlrnru4@group.calendar.google.com/events?key=AIzaSyBBzQwDZdAbTQ5mtDmxUoSBDd6japEiaCc
+![Screenshot of JSON](Images/ExampleJSON.png "Screenshot of JSON")
