@@ -5,28 +5,68 @@
 <meta name="author" content="Denison Enterprises"/>
 <meta name="Description" content="Get food."/>
 <link href="style.css" rel="stylesheet"/>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script type="text/javascript">
+var monthtext=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sept','Oct','Nov','Dec'];
+
+function populatedropdown(dayfield, monthfield, yearfield){
+var today=new Date()
+var dayfield=document.getElementById(dayfield)
+var monthfield=document.getElementById(monthfield)
+var yearfield=document.getElementById(yearfield)
+for (var m=0; m<12; m++)
+monthfield.options[m]=new Option(monthtext[m], monthtext[m])
+monthfield.options[today.getMonth()]=new Option(monthtext[today.getMonth()], monthtext[today.getMonth()], true, true) //select today's month
+var thisyear=today.getFullYear()
+for (var i=0; i<31; i++)
+dayfield.options[i]=new Option(i, i+1)
+dayfield.options[today.getDate()]=new Option(today.getDate(), today.getDate(), true, true) //select today's day
+for (var y=0; y<2; y++){
+yearfield.options[y]=new Option(thisyear, thisyear)
+thisyear+=1
+}
+yearfield.options[0]=new Option(today.getFullYear(), today.getFullYear(), true, true) //select today's year
+}
+</script>
+
 <!--link rel="shortcut icon" href="favicon.ico"/-->
+
 </head>
 
 <!-- PAGE DESIGN -->
 <body>
 
-<div id="header">
+<div id="headerMine">
 <h1> Food Sign-Up </h1>
 </div>
 
-<div id="form">
-    <h2> I need to update this repo. </h2> <br>
-    <table class="main-form">
-        <tr><td>Name:</td><td><input></td></tr>
-        <tr><td>D-Number:</td><td><input></td></tr>
-        <tr><td>Blah:</td><td><input></td></tr>
-    </table>
+<div class="container">
+    <div class="row">
+        <div class="span2">
+            <div class="" id="formMine">
+                <h2> Sign-Up To Pick-Up Meal </h2> <br>
+                <table class="main-formMine">
+                    <tr><td>Name:</td><td><input></td></tr>
+                    <tr><td>D-Number:</td><td><input></td></tr>
+                    <tr><td>Another Thing:</td><td><input></td></tr>
+                    <tr><td>Date To Pick-Up:</td><td><select id="monthdropdown"></select>&nbsp;<select id="daydropdown"></select>&nbsp;<select id="yeardropdown"></select></td></tr>
+                    <tr><td></td><td style="height:60px"><button class="btn">Submit</button></td></tr>
+                </table>
+            </div>
+        </div>
+        <div class="span10" id="padding">
+            <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTz=0&amp;mode=WEEK&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=denison.edu_5ssoueqdeb05s9boa80nlrnru4%40group.calendar.google.com&amp;color=%23691426&amp;ctz=America%2FNew_York" style="border-width:0" width="600" height="600" frameborder="0" scrolling="no"></iframe>
+        </div>
+    </div>
 </div>
 
-<div id="footer">
-All Rights Reserved &nbsp; | &nbsp; Denison Enterprises &nbsp; | &nbsp; 2015
-</div>
+<script type="text/javascript">
+
+//populatedropdown(id_of_day_select, id_of_month_select, id_of_year_select)
+window.onload=function(){
+populatedropdown("daydropdown", "monthdropdown", "yeardropdown")
+}
+</script>
 
 </body>
 </html>

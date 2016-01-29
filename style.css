@@ -1,6 +1,6 @@
 * { padding:0px; margin:0px; }
 
-#header {
+#headerMine {
     background-color:black;
     color:white;
     text-align:center;
@@ -8,7 +8,11 @@
     width: 100%;
 }
 
-#form {
+#padding {
+    padding-top: 40px;
+}
+
+#formMine {
     line-height:30px;
 	line-height: 100%;
     background-color:white;
@@ -18,27 +22,15 @@
     padding:20px; 
 }
 
-#footer {
-	position: relative;
-    background-color:black;
-    color:white;
-    clear: both;
-	height:25px;
-    text-align:center;
-    padding:10px;
-	bottom: 0px;
-	width: 100%;
-}
-
 .input {
 	background-color: black;
 }
 
-.main-form tr {
+.main-formMine tr {
 	height:30px;
 }
 
-.main-form td:nth-child(1) {
-	width:100px;
+.main-formMine td:nth-child(1) {
+	width:150px;
 }
 
