@@ -2,4 +2,5 @@
 A project integrating scheduling and catering for student use.
 Objective: minimize food waste and provide service to Denison students.
 
-Update: I talked to Claire and Nick and we're planning on moving to a LAMP stack. I will completely avoid Google Calendar and the API's garbage and pull things directly from the .ics file with PHP.
+Update: Talked with Aaron today and we're going to try to work with Denison on authentication issues. Getting access to students' grad year and email is proving to be a lot harder than originally thought.
+
