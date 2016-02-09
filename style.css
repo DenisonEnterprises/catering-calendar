@@ -1,5 +1,9 @@
 * { padding:0px; margin:0px; }
 
+.no-bullets {
+    list-style-type: none;
+}
+
 #headerMine {
     background-color:black;
     color:white;
@@ -19,7 +23,15 @@
     height:500px;
     width:500px;
     float:left;
-    padding:20px; 
+    padding:20px;
+}
+
+#formMine2 {
+    background-color:white;
+    height:500px;
+    width:500px;
+    float:left;
+    padding:20px;
 }
 
 .input {
