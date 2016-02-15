@@ -2,7 +2,9 @@
 A project integrating scheduling and catering for student use.
 Objective: minimize food waste and provide service to Denison students.
 
+===================================================
 Piper Project Pseudocode and Notes
+===================================================
 
 ===================================================
 Left List
