@@ -2,13 +2,10 @@
 A project integrating scheduling and catering for student use.
 Objective: minimize food waste and provide service to Denison students.
 
-===================================================
 Piper Project Pseudocode and Notes
 ===================================================
 
-===================================================
 Left List
-===================================================
 
 <ul>
 
@@ -34,7 +31,6 @@ foreach “event” {
 
 </ul>
 
-===================================================
 Insert Event Code
 ===================================================
 
@@ -44,7 +40,6 @@ Insert Event Code
 - [Modal that has info and warning?]
 - Submit to database
 
-===================================================
 Sign-Up Code
 ===================================================
 
@@ -52,7 +47,6 @@ Sign-Up Code
 - RegEx check for @denison.edu email
 - Email Verification - verify.php with hash
 
-===================================================
 Database Structure
 ===================================================
 
