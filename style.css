@@ -17,9 +17,9 @@
 }
 
 #formMine {
+    color: black;
     line-height:30px;
 	line-height: 100%;
-    background-color:white;
     height:500px;
     width:500px;
     float:left;
@@ -27,6 +27,7 @@
 }
 
 #formMine2 {
+    color: black;
     background-color:white;
     height:500px;
     width:500px;
@@ -46,3 +47,23 @@
 	width:150px;
 }
 
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}

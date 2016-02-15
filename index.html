@@ -66,6 +66,31 @@ yearfield.options[0]=new Option(today.getFullYear(), today.getFullYear(), true, 
                             <li>Vacant Spot</li>
                         </ul>
                     <hr>
+                                        <li><h3>Date | Time | Mac & Cheese</h3></li>
+                        <ul>
+                            <li style="color: red;">Spot Taken</li>
+                            <li>Vacant Spot</li>
+                            <li>Vacant Spot</li>
+                        </ul>
+                    <hr>
+                    <li><h3>Date | Time | Spaghetti</h3></li>
+                        <ul>
+                            <li>Vacant Spot</li>
+                            <li>Vacant Spot</li>
+                        </ul>
+                    <hr>
+                    <li><h3>Date | Time | Chicken Wings</h3></li>
+                        <ul>
+                            <li style="color: red;">Spot Taken</li>
+                            <li>Vacant Spot</li>
+                        </ul>
+                    <hr>
+                                        <li><h3>Date | Time | Mac & Cheese</h3></li>
+                        <ul>
+                            <li style="color: red;">Spot Taken</li>
+                            <li>Vacant Spot</li>
+                            <li>Vacant Spot</li>
+                        </ul>
                 </ul>
             </div>
         </div>
@@ -73,13 +98,50 @@ yearfield.options[0]=new Option(today.getFullYear(), today.getFullYear(), true, 
         <div class="col-md-6">
             <div id="formMine">
                 <h1>Sign-Up:</h1> <br>
-                <table class="main-formMine">
-                    <tr><td>Name:</td><td><input></td></tr>
-                    <tr><td>D-Number:</td><td><input></td></tr>
-                    <tr><td>Email:</td><td><input></td></tr>
-                    <tr><td>Date To Pick-Up:</td><td><select id="monthdropdown"></select>&nbsp;<select id="daydropdown"></select>&nbsp;<select id="yeardropdown"></select></td></tr>
-                    <tr><td></td><td style="height:60px"><button class="btn">Submit</button></td></tr>
-                </table>
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="inputFName" class="col-md-3 control-label">First Name</label>
+                        <div class="col-lg-9">
+                            <input type="text" class="form-control" id="inputText">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputLName" class="col-md-3 control-label">Last Name</label>
+                        <div class="col-lg-9">
+                            <input type="text" class="form-control" id="inputText">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputDnum" class="col-md-3 control-label">D Number</label>
+                        <div class="col-lg-9">
+                            <input type="text" class="form-control" id="inputText">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail" class="col-lg-3 control-label">Email</label>
+                        <div class="col-lg-9">
+                            <input type="email" class="form-control" id="inputEmail">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputFName" class="col-lg-3 control-label">Pick-Up Date</label>
+                        <div class="col-lg-3">
+                            <select class="form-control" id="monthdropdown"></select>
+                        </div>
+                        <div class="col-lg-3">
+                            <select class="form-control" id="daydropdown"></select>
+                        </div>
+                        <div class="col-lg-3">
+                            <select class="form-control" id="yeardropdown"></select>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <div class="col-lg-10 col-lg-offset-10">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
