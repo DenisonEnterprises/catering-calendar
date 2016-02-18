@@ -1,7 +1,5 @@
 ===================================================
-===================================================
 Piper Project Pseudocode and Notes
-===================================================
 ===================================================
 
 
@@ -61,7 +59,7 @@ Database Structure
     - LOCATION
     - NOTES
     - ATTENDANCE_LIMIT
-- TABLE ‘PEOPLE”
+- TABLE ‘PEOPLE’
     - PERSON_ID (PRIMARY KEY)
     - EVENT_ID (FOREIGN KEY)
     - D_NUMBER
