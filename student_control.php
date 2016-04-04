@@ -21,14 +21,15 @@
 
 <div id="headerMine">
 <h1>Catering Pick-Up</h1>
+<h4>Student Admin Portal</h4>
 </div>
 
 <div class="container">
     <div class="row">
         <div class="col-md-6">
             <div id="formMine">
-                <h1>Sign-Up:</h1><br>
-                <form class="form-horizontal" name="insertForm" action="insertAttendee.php" method="get">
+                <h1>Add Student:</h1><br>
+                <form class="form-horizontal" name="insertForm" action="insertStudent.php" method="get">
                     <div class="form-group">
                         <label for="inputFName" class="col-md-4 control-label">First Name</label>
                         <div class="col-lg-8">
@@ -48,31 +49,15 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputFName" class="col-lg-4 control-label">Event</label>
+                        <label for="inputDnum" class="col-md-4 control-label">Email</label>
                         <div class="col-lg-8">
-                            <select name="event" class="form-control" id="sel1" required>
-                            <?php
-                                $sql_statement3 = "SELECT event_id, food_type, attendance, date, end_time FROM event ORDER BY DATE(date)";
-                                
-                                $sth3 = $connect->prepare($sql_statement3);
-                                $sth3->execute();
-                                $sth3->bind_result($event_id, $food_type, $attendance, $date, $start_time);
-                                $sth3->store_result();
-                                
-                                while ($sth3->fetch()) {
-                                    if ( strtotime( "now" ) <= strtotime($date) ) {
-                                        $newDate = date("F j", strtotime($date));
-                                        $result = $connect->query("SELECT COUNT(*) FROM attendee WHERE $event_id = event_id");
-                                        $row = $result->fetch_row();
-                                        $count = $row[0];
-                                        if ( $count < $attendance ) {
-                                            echo "<option value=\"$event_id\">$food_type on $newDate";
-                                        }
-                                    }
-                                }
-                                $sth3->close();
-                            ?>
-                            </select>
+                            <input name="email" type="email" class="form-control" id="inputEmail" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputDnum" class="col-md-4 control-label">Class Year</label>
+                        <div class="col-lg-8">
+                            <input name="year" type="number" min="2014" class="form-control" id="inputEmail" required>
                         </div>
                     </div>
                     <br>
@@ -103,14 +88,18 @@
                                 $newTime = date("h:i A", strtotime($start_time));
                                 echo "<li><h3>$food_type</h3><h4 style=\"color:gray\">$newDate at $newTime</li></h4>";
                                 echo    "<ul style=\"padding-left: 50px;\">";
-                                $result = $connect->query("SELECT COUNT(*) FROM attendee WHERE $event_id = event_id and confirmed = \"1\"");
-                                $row = $result->fetch_row();
-                                $count = $row[0];
-                                for ($x = $count; $x > 0; $x--) {
-                                    echo "<li style=\"color: red;\">Spot Taken</li>";
+                                $sql_statement2 = "SELECT p.f_name, p.l_name FROM attendee a JOIN people p ON a.d_number = p.d_number WHERE $event_id = a.event_id and a.confirmed = \"1\"";
+                                $sth2 = $connect->prepare($sql_statement2);
+                                $sth2->execute();
+                                $sth2->bind_result($first_name, $last_name);
+                                $sth2->store_result();
+                                $counter = 0;
+                                while ($sth2->fetch()) {
+                                    echo "<li style=\"color: red\">$first_name $last_name</li>";
+                                    $counter++;
                                 }
-                                for ($y = $attendance - $count; $y > 0; $y--) {
-                                    echo "<li>Vacant Spot</li>";;
+                                for ($y = $attendance - $counter; $y > 0; $y--) {
+                                    echo "<li>Vacant Spot</li>";
                                 }
                                 echo    "</ul>";
                                 echo "<hr>";

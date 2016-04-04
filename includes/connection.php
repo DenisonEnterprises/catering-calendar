@@ -1,14 +1,14 @@
 <?php
-	$host="localhost";
-	$uname="*********";
-	$pass="**********";
-	$database = "************";	
+	$host = "localhost";
+	$user = "root";
+	$pw = "";
+	$db = "test";	
 
-	$connection=mysql_connect($host,$uname,$pass) 
-	or die("Database Connection Failed");
-	$selectdb=mysql_select_db($database) or die("Database could not be selected");	
-	$result=mysql_select_db($database)
-	or die("database cannot be selected <br>");
-	
-	session_start();
+    $connect = new mysqli($host, $user, $pw, $db);
+    
+    if (mysqli_connect_errno()) {
+        printf("The connection failed...you should try again.\n");
+        exit();
+    }
+
 ?>
