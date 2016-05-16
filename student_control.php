@@ -69,49 +69,9 @@
                 </form>
             </div>
         </div>
-        <div class="col-md-6">
-            <div id="formMine2">
-                <h1>Catering Schedule:</h1>
-                <hr>
-                <ul class="no-bullets">
-                    <?php
-                        $sql_statement = "SELECT event_id, food_type, attendance, date, end_time FROM event ORDER BY DATE(date)";
-                        
-                        $sth = $connect->prepare($sql_statement);
-                        $sth->execute();
-						$sth->bind_result($event_id, $food_type, $attendance, $date, $start_time);
-                        $sth->store_result();
-                        
-                        while ($sth->fetch()) {
-                            if ( strtotime( "now" ) <= strtotime($date) ) {
-                                $newDate = date("l, F j", strtotime($date));
-                                $newTime = date("h:i A", strtotime($start_time));
-                                echo "<li><h3>$food_type</h3><h4 style=\"color:gray\">$newDate at $newTime</li></h4>";
-                                echo    "<ul style=\"padding-left: 50px;\">";
-                                $sql_statement2 = "SELECT p.f_name, p.l_name FROM attendee a JOIN people p ON a.d_number = p.d_number WHERE $event_id = a.event_id and a.confirmed = \"1\"";
-                                $sth2 = $connect->prepare($sql_statement2);
-                                $sth2->execute();
-                                $sth2->bind_result($first_name, $last_name);
-                                $sth2->store_result();
-                                $counter = 0;
-                                while ($sth2->fetch()) {
-                                    echo "<li style=\"color: red\">$first_name $last_name</li>";
-                                    $counter++;
-                                }
-                                for ($y = $attendance - $counter; $y > 0; $y--) {
-                                    echo "<li>Vacant Spot</li>";
-                                }
-                                echo    "</ul>";
-                                echo "<hr>";
-                            }
-                        }
-                        
-                        $sth->close();
-                        $connect->close();
-                    ?>
-                </ul>
-            </div>
-        </div>
+        <?php
+            include("includes/catering_schedule.php");
+        ?>
     </div>
 </div>
 

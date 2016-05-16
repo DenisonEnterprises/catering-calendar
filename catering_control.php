@@ -112,7 +112,7 @@
                         $sth->store_result();
                         
                         while ($sth->fetch()) {
-                            if ( strtotime( "now" ) <= strtotime($date) ) {
+                            if ( strtotime( "yesterday" ) <= strtotime($date) ) {
                                 $newDate = date("l, F j", strtotime($date));
                                 $newTime = date("h:i A", strtotime($start_time));
                                 echo "<li><h3>$food_type</h3><h4 style=\"color:gray\">$newDate at $newTime</h4><h4>Location: $location</h4>";

@@ -4,7 +4,6 @@ Piper Project Pseudocode and Notes
 
 
 
-
 Left List
 ===================================================
 
@@ -59,7 +58,7 @@ Database Structure
     - FOOD_TYPE
     - LOCATION
     - NOTES
-    - ATTENDANCE
+    - ATTENDANCE_LIMIT
 - TABLE ‘PEOPLE’
     - PERSON_ID (PRIMARY KEY)
     - EVENT_ID (FOREIGN KEY)
@@ -68,10 +67,3 @@ Database Structure
     - FNAME
     - LNAME
     - CLASS_YEAR
-- TABLE ‘ATTENDEE’
-    - D_NUMBER (FOREIGN KEY)
-    - ATTENDEE_CREATED (TIMESTAMP)
-    - EVENT_ID (FOREIGN KEY)
-    - ATTENDEE_ID (PRIMARY KEY)
-    - HASH
-    - CONFIRMED
